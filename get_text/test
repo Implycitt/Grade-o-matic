@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from PIL import Image
 import pytesseract
 import os
@@ -13,3 +14,6 @@ image = Image.open(image_path)
 # Use pytesseract to extract text from the image
 text = pytesseract.image_to_string(image)
 print(text)## TESTING PURPOSES## 
+=======
+making sure that this works professional programmer here
+>>>>>>> c1a96e5f096a6b0b01b7f19c1dfebda81532efd6
