@@ -1,15 +1,14 @@
-from PIL import Image
-import pytesseract
-import os
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-questions = []
+import cv2
+import easyocr
 
-# Path to the image
-image_path = r'C:\\Users\\nihal\\Documents\\GitHub\\AutoGrader_\\input\\math.png'
+image_path = '../input/math.png'
 
-# Open the image using PIL
-image = Image.open(image_path)
+def read(image_path: str) -> list:
+    image = cv2.imread(image_path)
+    reader = easyocr.Reader(['en'])
+    text = reader.readtext(image)
+    read_words = [i[1] for i in text]
+    return read_words
 
-# Use pytesseract to extract text from the image
-text = pytesseract.image_to_string(image)
-print(text)## TESTING PURPOSES## 
+words = read(image_path)
+print(words)
