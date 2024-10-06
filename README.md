@@ -13,7 +13,7 @@ Implementing computer vision to read an image of a paper with simple arithmetic 
 * More ?
 
 ### Authors
-Nihal Mohapatro
+Nihal Mohapatro\
 Quentin Bordelon
 
 ### License
