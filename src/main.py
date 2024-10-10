@@ -1,14 +1,11 @@
-import cv2
-import easyocr
-
+import pytesseract
+from PIL import Image
 image_path = '../input/math.png'
 
 def read(image_path: str) -> list:
-    image = cv2.imread(image_path)
-    reader = easyocr.Reader(['en'])
-    text = reader.readtext(image)
-    read_words = [i[1] for i in text]
-    return read_words
+    image = Image.open(image_path)
+    # Use pytesseract to extract text from the image
+    text = pytesseract.image_to_string(image)
 
 words = read(image_path)
 print(words)
