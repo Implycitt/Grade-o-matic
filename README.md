@@ -9,10 +9,8 @@ Implementing computer vision to read an image of a paper with simple arithmetic 
 ## Dependencies
 
 * Latest [Python](https://python.org) Version 
-* OpenCV
-* Pytesseract
+* [PyTesseract](https://github.com/UB-Mannheim/tesseract/wiki)
 * PIL
-* More ?
 
 ## Authors
 Nihal Mohapatro\
