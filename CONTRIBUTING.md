@@ -1,2 +1,0 @@
-Nihal Mohapatro
-Quentin Bordelon
