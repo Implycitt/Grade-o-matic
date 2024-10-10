@@ -5,7 +5,7 @@ answers_list = []
 
 ## while loop seperates the list and appends only the questions
 def get_questions_list(text):
-    counter =0 
+    counter = 0 
     while counter < (len(text)):
         t = text[counter]
         questions.append(t[1])
@@ -22,15 +22,16 @@ def get_cleaned_list(questions):
         counter+=1
     return cleaned_list
 
-def get_answers_list(questions):  ### doesn't read handwriting for some reason ##
-    counter = 0 
+def get_answers_list(questions): 
     temp_list =[]
-    while counter < (len(questions)):
-        t = questions[counter]
-        q=t.split("=")
-        temp_list.append(q[1])
+    for t in questions:
+        q = t.split("=")
+        answer =q[1].strip()
+        if answer.replace('.', '', 1).isdigit():
+            temp_list.append(answer)
+        else:
+            temp_list.append('0') 
         answers_list = [eval(add) for add in temp_list]
-        counter+=1
     return answers_list
 
 def get_evaluated_list(cleaned_list):

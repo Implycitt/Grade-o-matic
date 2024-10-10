@@ -2,7 +2,7 @@ import vision
 import lists ### refer to lists file##
 import Grader
 
-image_path = r'..\input\handwriting_2_.jpg'
+image_path = r'..\input\handwriting_3.jpg'
 
 text = vision.EasyOCR(image_path) ### reads the image and gets a big list#
 
