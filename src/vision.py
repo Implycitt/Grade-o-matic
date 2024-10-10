@@ -10,3 +10,7 @@ def read_image(path: str) -> str:
     image = Image.open(image_path)
     text = pytesseract.image_to_string(image)
     return text
+
+
+t =read_image(image_path)
+print(t)
