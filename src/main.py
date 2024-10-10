@@ -2,6 +2,7 @@ from PIL import Image
 import pytesseract
 questions = []
 cleaned_list=[]
+evaluated_list=[]
 
 # Path to the image
 image_path = r'..\Grade-o-matic-1\input\math.jpg'
@@ -12,12 +13,13 @@ image = Image.open(image_path)
 # Use pytesseract to extract text from the image
 text = pytesseract.image_to_string(image)
 
+# cleans the data and gets a clean list from the text
 questions.append(text.split("="))
-for question in questions:
-    for q in question:
-        cleaned_list.append(q.strip())
+cleaned_list = [q.strip() for question in questions for q in question]
+evaluated_list = [eval(add) for add in cleaned_list]
 
 
 ## TESTING PURPOSES## 
 print(text)
 print(cleaned_list)
+print(evaluated_list)
