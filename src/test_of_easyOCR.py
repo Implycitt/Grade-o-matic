@@ -1,37 +1,16 @@
-from PIL import Image
-import easyocr as es
-
-questions = []
-cleaned_list=[]
-evaluated_list=[]
-
-reader = es.Reader(['en'])
+import vision
+import lists ### refer to lists file##
 
 
 image_path = r'..\input\math.jpg'
-image = Image.open(image_path)
 
-text = reader.readtext(image_path) ### reads the image and gets a big list#
+text = vision.EasyOCR(image_path) ### reads the image and gets a big list#
 
-## TESTING PURPOSES##
-counter = 0 
+questions = lists.get_questions_list(text)
+cleaned_list = lists.get_cleaned_list(questions)
+evaluated_list = lists.get_evaluated_list(cleaned_list)
 
-## while loop seperates the list and appends only the questions
-while counter < (len(text)):
-    t = text[counter]
-    questions.append(t[1])
-    counter+=1
 
-### removes the "=" so that eval can be used 
-counter = 0 
-while counter < (len(questions)):
-    t = questions[counter]
-    q=t.split("=")
-    cleaned_list.append(q[0])
-    counter+=1
-print(cleaned_list)
-
-## evals and adds to the evaluated list 
-for add in cleaned_list:
-    evaluated_list.append(eval(add))
-print(evaluated_list)
+print("Questions \n",questions)
+print("cleaned list \n",cleaned_list)
+print("evaluated list \n",evaluated_list)
