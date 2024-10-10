@@ -1,11 +1,13 @@
-import pytesseract
 from PIL import Image
-image_path = '../input/math.png'
+import pytesseract
+questions = []
 
-def read(image_path: str) -> list:
-    image = Image.open(image_path)
-    # Use pytesseract to extract text from the image
-    text = pytesseract.image_to_string(image)
+# Path to the image
+image_path = r'..\Grade-o-matic-1\input\math.png'
 
-words = read(image_path)
-print(words)
+# Open the image using PIL
+image = Image.open(image_path)
+
+# Use pytesseract to extract text from the image
+text = pytesseract.image_to_string(image)
+print(text)## TESTING PURPOSES## 
