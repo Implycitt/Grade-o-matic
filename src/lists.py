@@ -1,6 +1,7 @@
 questions = []
 cleaned_list=[]
 evaluated_list=[] 
+answers_list = []
 
 ## while loop seperates the list and appends only the questions
 def get_questions_list(text):
@@ -21,6 +22,14 @@ def get_cleaned_list(questions):
         counter+=1
     return cleaned_list
 
+def get_answers_list(questions):  ### doesn't read handwriting for some reason ##
+    counter = 0 
+    while counter < (len(questions)):
+        t = questions[counter]
+        q=t.split("=")
+        answers_list.append(q[1])
+        counter+=1
+    return answers_list
 
 def get_evaluated_list(cleaned_list):
     for add in cleaned_list:

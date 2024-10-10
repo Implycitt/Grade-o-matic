@@ -13,8 +13,9 @@ def read_image(path: str) -> str:
     text = pytesseract.image_to_string(image)
     return text
 
+
+
 def EasyOCR(path: str) -> str: 
-    image = Image.open(image_path)
     reader = es.Reader(['en'])
-    text = reader.readtext(image_path)
+    text = reader.readtext(path)
     return text
