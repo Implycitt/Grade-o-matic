@@ -4,8 +4,11 @@ questions = []
 cleaned_list=[]
 evaluated_list=[]
 
+# pt is not working for some reason if the path is not explicitly stated so im keeping it here (DO NOT TOUCH)
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
 # Path to the image
-image_path = r'..\Grade-o-matic-1\input\math.jpg'
+image_path = r'..\input\math.jpg'
 
 # Open the image using PIL
 image = Image.open(image_path)
