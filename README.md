@@ -10,6 +10,8 @@ Implementing computer vision to read an image of a paper with simple arithmetic 
 
 * Latest [Python](https://python.org) Version 
 * OpenCV
+* Pytesseract
+* PIL
 * More ?
 
 ## Authors
