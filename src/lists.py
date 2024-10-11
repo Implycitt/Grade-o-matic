@@ -31,7 +31,7 @@ def get_answers_list(questions):
             temp_list.append(answer)
         else:
             temp_list.append('0') 
-        answers_list = [eval(add) for add in temp_list]
+    answers_list = [eval(add) for add in temp_list]
     return answers_list
 
 def get_evaluated_list(cleaned_list):
