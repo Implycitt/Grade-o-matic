@@ -9,7 +9,7 @@ Implementing computer vision to read an image of a paper with simple arithmetic 
 ## Dependencies
 
 * Latest [Python](https://python.org) Version 
-* [PyTesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+* [EasyOCR]((https://github.com/JaidedAI/EasyOCR))
 * PIL
 
 ## Authors
