@@ -1,19 +1,19 @@
 import vision
+import lists ### refer to lists file##
+import Grader
 
-questions = []
-cleaned_list=[]
-evaluated_list=[]
+image_path = r'..\input\multiplication.jpg'
 
+text = vision.EasyOCR(image_path) ### reads the image and gets a big list#
 
-image_path = r'..\input\math.jpg'
-text = vision.read_image(image_path)
+equation = lists.get_equation_list(text)
+questions = lists.get_cleaned_list(equation)
+evaluated_list = lists.get_evaluated_list(questions)
+answers = lists.get_answers_list(equation)
+Grade = Grader.Grade(evaluated_list, answers)
 
-# cleans the data and gets a clean list from the text
-questions.append(text.split("="))
-cleaned_list = [q.strip() for question in questions for q in question]
-evaluated_list = [eval(add) for add in cleaned_list]
-
-## TESTING PURPOSES## 
-print(text)
-print(cleaned_list)
-print(evaluated_list)
+print(f"Equation \n{equation}")
+print(f"Question \n{questions}")
+print(f"evaluated list \n{evaluated_list}")
+print(f"answers list \n{answers}")
+print(f"Grade: {Grade}%")
